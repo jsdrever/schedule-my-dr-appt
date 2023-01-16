@@ -5,12 +5,14 @@ $(function () {
         // this click event does not target the specific box it is supposed to
         // event.preventDefault();
         var key = event.target.dataset.button
-
+        
         var value = $(this).siblings(".description").val();
-
-
+        
+        
+        console.log(value);
         
         localStorage.setItem(".description", JSON.stringify(value));
+        
         // ! this only saves the last comment to storage and deletes the previous stored comment.
         // ! im seriously about to make a seperate tag for every hour. this is so annoying
         // value.appendChild(storedValue);
@@ -58,7 +60,7 @@ $(function () {
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // ! attribute of each time-block be used to do this? why are you replacing previous stored objects. how am i supposed to write this if...
-    if (storedValue == null) {
+    if (storedValue === null) {
         return;
         // value = [];
         
@@ -71,7 +73,6 @@ $(function () {
     
     // .map(storedValue)
     // .map(value)
-    console.log(value);
     console.log(storedValue);
     // console.log(dayjs().hour());
     // console.log(event.target);
