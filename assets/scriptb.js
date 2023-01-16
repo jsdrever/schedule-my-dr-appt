@@ -21,24 +21,50 @@ $(function () {
     // attribute of each time-block be used to conditionally add or remove the
     // past, present, and future classes? How can Day.js be used to get the
     // current hour in 24-hour time?
-    //! moment()/ moment.js() did not work. using the time variable from time display breaks time display
-    // var timeBlock = document.getElementById('#time-blocks')
-    // for (var i = 0; i < timeBlock.length; i++)
-    //     if (timeBlock === dayjs().hour()) {
-    //         timeBlock.attr('class', 'present');
-    //         timeBlock.addClass('present');
-    //     } else if (timeBlock < dayjs().hour()) {
-    //         timeBlock.attr('class', 'past');
-    //         timeBlock.addClass('past');
-    //     } else {
-    //         timeBlock.attr('class', 'future');
-    //         timeBlock.addClass('future');
-    //     }
+    //! how to compare the hour id to the current hour using time block???? what am i supposed to do here
+    // var hour9 = document.querySelector('#hour-9'); 
+    // var hour10 = document.querySelector('#hour-10'); 
+    // var hour11 = document.querySelector('#hour-11'); 
+    // var hour12 = document.querySelector('#hour-12'); 
+    // var hour1 = document.querySelector('#hour-1'); 
+    // var hour2 = document.querySelector('#hour-2'); 
+    // var hour3 = document.querySelector('#hour-3'); 
+    // var hour4 = document.querySelector('#hour-4'); 
+    // var hour5 = document.querySelector('#hour-5'); 
+
+    var timeBlock = document.querySelectorAll('.time-block');
+
+    function setHour() {
+
+        for (var i = 0; i < timeBlock.length; i++) {
+            let currentHour = JSON.parse(timeBlock[i].getAttribute("id").split('-')[1]);
+
+            if (currentHour == dayjs().hour()) {
+                timeBlock[i].setAttribute('class', 'present');
+                // timeBlock[i].addClass('present');
+            } else if (currentHour < dayjs().hour()) {
+                timeBlock[i].setAttribute('class', 'past');
+                timeBlock[i].classList.remove("present")
+
+                // timeBlock[i].addClass('past');
+            } else {
+                timeBlock[i].setAttribute('class', 'future');
+                timeBlock[i].classList.remove("present", "past")
+
+                // timeBlock[i].addClass('future');
+            }
+            console.log(currentHour);
+        }
+    }
+
+    setHour();
+    setInterval(setHour, 15000);
+
 
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // ! attribute of each time-block be used to do this? why are you replacing previous stored objects. how am i supposed to write this if...
-    if (storedValue === null) {
+    if (storedValue == null) {
         return;
         // value = [];
 
@@ -50,6 +76,7 @@ $(function () {
     }
 
     // .map(storedValue)
+    // .map(value)
     console.log(storedValue);
     console.log(dayjs().hour());
 
@@ -58,3 +85,4 @@ $(function () {
         $('#currentDay').text(time);
     }, 1000);
 });
+
