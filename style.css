@@ -3,7 +3,21 @@ body {
     font-size: 16px;
     background-color: rgb(78, 217, 217);
   }
-  
+  .lol {
+    position: fixed;
+    right: 15%;
+    top: 10%;
+    max-width: 10px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
   textarea {
     background: transparent;
     border: none;

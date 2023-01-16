@@ -3,8 +3,8 @@ var saveEl = $(".btn")
 $(function () {
     saveEl.on('click', function (event) {
         // this click event does not target the specific box it is supposed to
-        // event.preventDefault();
-        var key = event.target.dataset.button
+        event.preventDefault();
+        // var key = event.target.dataset.button
         
         var value = $(this).siblings(".description").val();
         
@@ -13,17 +13,11 @@ $(function () {
         
         localStorage.setItem(".description", JSON.stringify(value));
         
-        // ! this only saves the last comment to storage and deletes the previous stored comment.
-        // ! im seriously about to make a seperate tag for every hour. this is so annoying
-        // value.appendChild(storedValue);
-    })
-    
+        // ! this only saves the last clicked to storage and deletes the previous stored comment.
+        
+        
+    });
 
-
-
-
-
-    
     var timeBlock = document.querySelectorAll('.time-block');
     
     function setHour() {
@@ -33,21 +27,18 @@ $(function () {
             
             if (currentHour == dayjs().hour()) {
                 timeBlock[i].classList.add('present');
-                // timeBlock[i].setAttribute('class', 'present');
-                // timeBlock[i].addClass('present');
+            
             } else if (currentHour < dayjs().hour()) {
                 timeBlock[i].classList.add('past');
-                // timeBlock[i].setAttribute('class', 'past');
                 timeBlock[i].classList.remove("present")
                 
-                // timeBlock[i].addClass('past');
             } else {
-                // timeBlock[i].setAttribute('class', 'future');
+          
                 timeBlock[i].classList.add('future');
                 
                 timeBlock[i].classList.remove("present", "past")
                 
-                // timeBlock[i].addClass('future');
+               
             }
             
         }
@@ -62,7 +53,6 @@ $(function () {
     // ! attribute of each time-block be used to do this? why are you replacing previous stored objects. how am i supposed to write this if...
     if (storedValue === null) {
         return;
-        // value = [];
         
     } else {
         var storedValue = JSON.parse(localStorage.getItem(".description"));
@@ -71,13 +61,8 @@ $(function () {
         storedValue.innerHTML
     }
     
-    // .map(storedValue)
-    // .map(value)
-    console.log(storedValue);
-    // console.log(dayjs().hour());
-    // console.log(event.target);
-    
-    
+   
+    console.log(storedValue);  
 });
 
 var timerInterval = setInterval(function () {
