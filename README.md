@@ -10,3 +10,4 @@ github address
 https://github.com/jsdrever/schedule-my-dr-appt.git
 
 web address 
+https://jsdrever.github.io/schedule-my-dr-appt/

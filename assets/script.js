@@ -5,24 +5,16 @@ $(function () {
 
         saveEl.on('click', function (event) {
 
-            event.preventDefault();
-            var key = event.target.dataset.button
-
             var todo = $(this).siblings(".description").val();
-
 
             for (var i = 0; i < todo.length; i++) {
                 if (!todo) {
                     return;
 
                 } else {
-
                     localStorage.setItem("description", JSON.stringify(todo));
-
                     // ! this only saves the last clicked to storage and deletes the previous stored comment.
-
                 }
-                console.log(todo);
             }
         });
     }
@@ -58,7 +50,7 @@ $(function () {
 });
 function renderStored() {
 
-    // storedValue.push(todo);
+    
     if (storedValue !== null) {
         var storedValue = JSON.parse(localStorage.getItem("description"));
         document.querySelector(".description").textContent = storedValue;
