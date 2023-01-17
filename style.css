@@ -2,7 +2,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: white;
     font-size: 16px;
-    background-image:url('https://i.ytimg.com/vi/VFVrVQiqQ2I/maxresdefault.jpg'); background-size:repeat;
+    background-image:url('https://media.tenor.com/5f3s1LEfRb4AAAAC/living-wallpaper-moving-wallpaper.gif'); background-size:cover;
   }
   .lol {
     position: fixed;
@@ -23,7 +23,7 @@ body {
     background: transparent;
     border: none;
     resize: none;
-    color: #f7f1f1;
+    color: #121111;
     font-weight: bolder;
     border-left: 1px solid rgb(28, 26, 46);
     padding: 10px;
@@ -42,7 +42,7 @@ body {
   }
   
   .hour {
-    background-color: #ffffff;
+    background-color: #ffffff33;
     color: #000000;
     border-top: 1px dashed #000000;
   }
@@ -53,12 +53,12 @@ body {
   }
   
   .present {
-    background-color: #ff6961;
+    background-color: #ff696133;
     color: white;
   }
   
   .future {
-    background-color: #77dd77;
+    background-color: #77dd7733;
     color: white;
   }
   
