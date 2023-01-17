@@ -6,15 +6,18 @@ $(function () {
         event.preventDefault();
         // var key = event.target.dataset.button
         
-        var value = $(this).siblings(".description").val();
+        var todo = $(this).siblings(".description").val();
         
-        
-        console.log(value);
-        
-        localStorage.setItem(".description", JSON.stringify(value));
-        
-        // ! this only saves the last clicked to storage and deletes the previous stored comment.
-        
+        if (!todo) {
+            return;
+            
+        } else {
+            
+            localStorage.setItem(".description", JSON.stringify(todo));
+            
+            // ! this only saves the last clicked to storage and deletes the previous stored comment.
+        }
+        console.log(todo);
         
     });
 
