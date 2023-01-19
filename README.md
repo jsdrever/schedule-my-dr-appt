@@ -4,8 +4,6 @@ The user will be able to add new events by clicking on the time they want and ty
 
 Also maybe add a clear list button if we have time
 
-Add the image here
-
 github address 
 https://github.com/jsdrever/schedule-my-dr-appt.git
 
